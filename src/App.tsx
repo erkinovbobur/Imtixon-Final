@@ -9,6 +9,8 @@ import Eyeliner from "./routes/catigories/Eyeliner"
 import Mascara from "./routes/catigories/Mascara"
 import Blush from "./routes/catigories/Blush"
 import Bronzer from "./routes/catigories/Bronzer"
+import Single from "./routes/single/Single"
+import Body from "./components/body/Body";
 
 function App() {
   return (
@@ -18,9 +20,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/like" element={<Like />} />
-        {/* <Route path='/deatels/:id' element={<Deatels />} /> */}
+        <Route path="/Body" element={<Body />} /> 
         <Route path="*" element={<Home />} />
-
+        <Route path="/details/:productId" element={<Single />} />
+        <Route path="/Single" element={<Single />}/>
         <Route path="/Lipstick" element={<Lipstick />} />
         <Route path="/Foundation" element={<Foundation />} />
         <Route path="/Eyeliner" element={<Eyeliner />} />

@@ -14,6 +14,12 @@ export interface Product {
     quantity: number;
     liked?: boolean;
     key?: number;
+    product_colors?: {
+        hex_value: string;
+        colour_name: string;
+      }[];
+      
+      
 }
 
 export interface CurrencyState {
