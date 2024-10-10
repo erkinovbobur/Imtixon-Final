@@ -4,7 +4,7 @@ import { FaShoppingCart, FaHeart } from 'react-icons/fa';
 import { useState } from 'react'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlices'; 
-import { likeProduct, unlikeProduct } from '../../redux/slices/LikeSlices'; // Like va unlike funksiyalari
+import { likeProduct, unlikeProduct } from '../../redux/slices/LikeSlices'; 
 import { Product } from '../../redux/type'; 
 
 const Mascara = () => {
@@ -12,7 +12,7 @@ const Mascara = () => {
   const [tooltipIndex, setTooltipIndex] = useState<number | null>(null);
   const dispatch = useDispatch();
 
-  const likedProducts = useSelector((state: any) => state.like.likedProducts); // Like holatini olish
+  const likedProducts = useSelector((state: any) => state.like.likedProducts); 
 
   const handleAddToCart = (product: Product) => {
     dispatch(addToCart(product)); 
@@ -20,13 +20,13 @@ const Mascara = () => {
 
   const handleLikeProduct = (productId: number) => {
       if (likedProducts.includes(productId)) {
-          dispatch(unlikeProduct(productId)); // Agar mahsulot yoqilgan bo'lsa, unlike qiling
+          dispatch(unlikeProduct(productId)); 
       } else {
-          dispatch(likeProduct(productId)); // Aks holda, like qiling
+          dispatch(likeProduct(productId)); 
       }
   };
 
-  const isProductLiked = (productId: number) => likedProducts.includes(productId); // Mahsulot likedmi?
+  const isProductLiked = (productId: number) => likedProducts.includes(productId); 
 
   if (isLoading) {
     return (
@@ -59,7 +59,7 @@ const Mascara = () => {
               className="w-full h-48 object-cover rounded-t-lg"
             />
 
-            {/* Like icon */}
+           
             <div className="absolute top-3 right-3 p-[15px]">
               <div className="relative">
                 {tooltipIndex === index && (
@@ -92,8 +92,8 @@ const Mascara = () => {
                   <div
                     key={index}
                     className="w-6 h-6 rounded-full border border-gray-300 mb-2"
-                    style={{ backgroundColor: color.hex_value || '#ccc' }} // Default rang
-                    title={color.colour_name || 'Unknown'} // Unknown rang nomi
+                    style={{ backgroundColor: color.hex_value || '#ccc' }} 
+                    title={color.colour_name || 'Unknown'} 
                   ></div>
                 ))}
               </div>

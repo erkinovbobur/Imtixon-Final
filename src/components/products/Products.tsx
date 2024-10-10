@@ -63,7 +63,7 @@ const Products = () => {
                             <img
                                 src={product.image_link}
                                 alt={product.name}
-                                className="w-full h-full object-contain" // o'zgartirish
+                                className="w-full h-full object-contain" 
                             />
                         </div>
 
@@ -78,7 +78,7 @@ const Products = () => {
                             <Link to={`/details/${product.id}`}>
     <button 
         className="text-blue-600 underline text-sm hover:text-blue-800 transition-colors duration-200"
-        onClick={() => handleViewDetails(product.id)} // o'zgartirish
+        onClick={() => handleViewDetails(product.id)} 
     >
         Mahsulotni ko‘rish
     </button>

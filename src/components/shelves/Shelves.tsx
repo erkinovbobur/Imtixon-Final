@@ -48,7 +48,7 @@ const Shelves = () => {
 
     const renderStars = (rating: number | null) => {
         const stars = [];
-        const starRating = rating !== null ? rating : 0; // rating null bo'lsa, 0 sifatida qabul qilinadi
+        const starRating = rating !== null ? rating : 0; 
         for (let i = 0; i < 5; i++) {
             stars.push(
                 <span key={i} className={`text-lg ${i < starRating ? "text-yellow-500" : "text-gray-400"}`}>
@@ -103,9 +103,9 @@ const Shelves = () => {
                                 {formatPrice(product.price)}
                             </p>
 
-                            {/* Reyting yulduzlarini ko'rsatish */}
+                          
                             <div className="mb-4">
-                                {renderStars(product.rating)} {/* Reyting ko'rsatish */}
+                                {renderStars(product.rating)}
                             </div>
 
                             <Link to={`/details/${product.id}`}>

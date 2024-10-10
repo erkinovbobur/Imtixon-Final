@@ -4,7 +4,7 @@ import { FaShoppingCart, FaHeart } from 'react-icons/fa';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlices';
-import { likeProduct, unlikeProduct } from '../../redux/slices/LikeSlices'; // Unlike funksiyasini import qilish
+import { likeProduct, unlikeProduct } from '../../redux/slices/LikeSlices'; 
 import { Product, RootState } from '../../redux/type';
 
 const Bronzer = () => {
@@ -19,9 +19,9 @@ const Bronzer = () => {
 
   const handleLikeToggle = (productId: number) => {
     if (likedProducts.includes(productId)) {
-      dispatch(unlikeProduct(productId)); // Agar mahsulot yoqilgan bo'lsa, unlike qiling
+      dispatch(unlikeProduct(productId)); 
     } else {
-      dispatch(likeProduct(productId)); // Aks holda, like qiling
+      dispatch(likeProduct(productId)); 
     }
   };
 
@@ -51,7 +51,7 @@ const Bronzer = () => {
             className="bg-white rounded-lg shadow-lg p-4 flex flex-col justify-between h-full transition-transform transform hover:-translate-y-1 hover:shadow-xl relative"
           >
             <img
-              src={product.image_link || '/path/to/placeholder-image.png'} // Zaxira rasm qo'shish
+              src={product.image_link || '/path/to/placeholder-image.png'} 
               alt={product.name}
               className="w-full h-48 object-cover rounded-t-lg"
             />
@@ -83,7 +83,7 @@ const Bronzer = () => {
                 {product.price}
               </p>
 
-              {/* Colors */}
+            
               <div className="flex flex-wrap space-x-2 mt-2">
                 {product.product_colors?.slice(0, 6).map((color, index: number) => (
                   <div

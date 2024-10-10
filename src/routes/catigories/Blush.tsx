@@ -1,34 +1,34 @@
 import { CgDollar } from "react-icons/cg";
 import { useBlushQuery } from "../../redux/api/usersApi";
-import { FaShoppingCart, FaHeart } from 'react-icons/fa'; // Font Awesome ikonkalari
-import { useState } from 'react'; // State uchun
+import { FaShoppingCart, FaHeart } from 'react-icons/fa';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../redux/slices/cartSlices'; // Korzinaga qo'shish funksiyasi
-import { likeProduct, unlikeProduct } from '../../redux/slices/LikeSlices'; // Like va unlike funksiyalari
-import { Product } from '../../redux/type'; // Import yo'lini kerakli tarzda o'zgartiring
+import { addToCart } from '../../redux/slices/cartSlices'; 
+import { likeProduct, unlikeProduct } from '../../redux/slices/LikeSlices'; 
+import { Product } from '../../redux/type'; 
 
 const Blush = () => {
   const { data, isLoading, isError } = useBlushQuery();
   const [tooltipIndex, setTooltipIndex] = useState<number | null>(null);
   const dispatch = useDispatch();
 
-  const likedProducts = useSelector((state: any) => state.like.likedProducts); // Like holatini olish
+  const likedProducts = useSelector((state: any) => state.like.likedProducts); 
 
   const handleAddToCart = (product: Product) => {
-    dispatch(addToCart(product)); // Mahsulotni korzinaga qo'shish
+    dispatch(addToCart(product)); 
   };
 
   const handleLikeProduct = (productId: number) => {
       if (likedProducts.includes(productId)) {
-          dispatch(unlikeProduct(productId)); // Agar mahsulot yoqilgan bo'lsa, unlike qiling
+          dispatch(unlikeProduct(productId)); 
       } else {
-          dispatch(likeProduct(productId)); // Aks holda, like qiling
+          dispatch(likeProduct(productId)); 
       }
   };
 
-  const isProductLiked = (productId: number) => likedProducts.includes(productId); // Mahsulot likedmi?
+  const isProductLiked = (productId: number) => likedProducts.includes(productId); 
 
-  // Loading va Error holatlarini tekshirish
+ 
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -39,7 +39,7 @@ const Blush = () => {
 
   if (isError) return <div className="text-center text-red-500">Error fetching blush data</div>;
 
-  // Data yo'q bo'lsa, bo'sh joy ko'rsatish
+  
   if (!data || data.length === 0) {
     return <div className="text-center text-gray-500">No products available</div>;
   }
@@ -59,7 +59,7 @@ const Blush = () => {
               className="w-full h-48 object-cover rounded-t-lg"
             />
 
-            {/* Like ikonasi */}
+            
             <div className="absolute top-3 right-3 p-[15px]">
               <div className="relative">
                 {tooltipIndex === index && (

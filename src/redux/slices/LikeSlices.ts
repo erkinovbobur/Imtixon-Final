@@ -13,7 +13,7 @@ const likeSlice = createSlice({
     initialState,
     reducers: {
         likeProduct: (state, action: PayloadAction<number>) => {
-            if (!state.likedProducts.includes(action.payload)) { // Duplicate check
+            if (!state.likedProducts.includes(action.payload)) { 
                 state.likedProducts.push(action.payload);
                 localStorage.setItem('likedProducts', JSON.stringify(state.likedProducts));
             }
@@ -26,4 +26,4 @@ const likeSlice = createSlice({
 });
 
 export const { likeProduct, unlikeProduct } = likeSlice.actions;
-export default likeSlice.reducer; // Make sure to export the reducer
+export default likeSlice.reducer; 

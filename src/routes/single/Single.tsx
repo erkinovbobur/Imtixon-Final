@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useProductQuery } from "../../redux/api/usersApi"; // API hook
+import { useProductQuery } from "../../redux/api/usersApi"; 
 import { Product } from "../../redux/type";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlices";
@@ -15,7 +15,7 @@ const Single = () => {
     const numericProductId = productId ? parseInt(productId) : null;
     const product = products?.find((p: Product) => p.id === numericProductId);
 
-    const [selectedColor, setSelectedColor] = useState<string | null>(null); // Tanlangan rang
+    const [selectedColor, setSelectedColor] = useState<string | null>(null); 
 
     const formatPrice = (price: string) => {
         const numericPrice = parseFloat(price);
@@ -31,11 +31,11 @@ const Single = () => {
         if (selectedColor) {
             const cartItem = {
                 ...product,
-                selectedColor, // Tanlangan rang
+                selectedColor, 
             };
-            dispatch(addToCart(cartItem)); // Korzinkaga qo'shish
+            dispatch(addToCart(cartItem)); 
         } else {
-            alert("Iltimos, rangni tanlang!"); // Rang tanlanmagan bo'lsa
+            alert("Iltimos, rangni tanlang!"); 
         }
     };
 
@@ -72,13 +72,13 @@ const Single = () => {
                                 className={`w-6 h-6 rounded-full border mb-2 cursor-pointer ${selectedColor === color.hex_value ? 'ring-2 ring-blue-500' : ''}`}
                                 style={{ backgroundColor: color.hex_value || '#ccc' }}
                                 title={color.colour_name || 'Unknown'}
-                                onClick={() => setSelectedColor(color.hex_value)} // Rangni tanlash
+                                onClick={() => setSelectedColor(color.hex_value)} 
                             ></div>
                         ))}
                     </div>
                     <p className="text-gray-700 mb-4">Kategoriya: {product.category}</p>
                     <button
-                        onClick={handleAddToCart} // Korzinkaga qo'shish
+                        onClick={handleAddToCart} 
                         className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
                     >
                         Savatchaga qo‘shish

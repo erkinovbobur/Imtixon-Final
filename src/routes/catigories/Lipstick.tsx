@@ -1,26 +1,26 @@
 import { useLipstickQuery } from "../../redux/api/usersApi";
-import { FaShoppingCart, FaHeart } from 'react-icons/fa'; // Font Awesome ikonkalari
-import { useState } from 'react'; // State uchun
+import { FaShoppingCart, FaHeart } from 'react-icons/fa'; 
+import { useState } from 'react'; 
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../redux/slices/cartSlices'; // Korzinaga qo'shish funksiyasi
-import { likeProduct, unlikeProduct } from '../../redux/slices/LikeSlices'; // Like va unlike funksiyalari
-import { Product, RootState } from '../../redux/type'; // Product va RootState import
+import { addToCart } from '../../redux/slices/cartSlices'; 
+import { likeProduct, unlikeProduct } from '../../redux/slices/LikeSlices'; 
+import { Product, RootState } from '../../redux/type'; 
 
 const Lipstick = () => {
   const { data, isLoading, isError } = useLipstickQuery();
-  const [tooltipIndex, setTooltipIndex] = useState<number | null>(null); // Tooltipni ko'rsatish uchun index
-  const dispatch = useDispatch(); // Redux'dan dispatch olish
-  const likedProducts = useSelector((state: RootState) => state.like.likedProducts); // Liked mahsulotlar
+  const [tooltipIndex, setTooltipIndex] = useState<number | null>(null); 
+  const dispatch = useDispatch(); 
+  const likedProducts = useSelector((state: RootState) => state.like.likedProducts); 
 
   const handleAddToCart = (product: Product) => {
-    dispatch(addToCart(product)); // Mahsulotni korzinaga qo'shish
+    dispatch(addToCart(product)); 
   };
 
   const handleLikeToggle = (productId: number) => {
     if (likedProducts.includes(productId)) {
-      dispatch(unlikeProduct(productId)); // Agar mahsulot yoqilgan bo'lsa, unlike qiling
+      dispatch(unlikeProduct(productId));
     } else {
-      dispatch(likeProduct(productId)); // Aks holda, like qiling
+      dispatch(likeProduct(productId)); 
     }
   };
 

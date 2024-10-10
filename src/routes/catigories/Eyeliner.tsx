@@ -94,8 +94,8 @@ const Eyeliner = () => {
                   <div
                     key={index}
                     className="w-6 h-6 rounded-full border border-gray-300 mb-2"
-                    style={{ backgroundColor: color.hex_value || '#ccc' }} // Default rang
-                    title={color.colour_name || 'Unknown'} // Unknown rang nomi
+                    style={{ backgroundColor: color.hex_value || '#ccc' }} 
+                    title={color.colour_name || 'Unknown'} 
                   ></div>
                 ))}
               </div>

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   const cart = useSelector((state: RootState) => state.cart.products.length);
   const like = useSelector((state: RootState) => state.like.likedProducts.length);
   const currency = useSelector((state: RootState) => state.currency.selected);
-  const [searchQuery, setSearchQuery] = useState(""); // Qidiruv so'zini saqlash
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <div>
@@ -50,8 +50,8 @@ const Header: React.FC = () => {
               type="text"
               placeholder="Mahsulotlar, brendlarni qidirish"
               className="w-full py-2 px-4 rounded-full border border-gray-300 focus:outline-none focus:border-black focus:ring focus:ring-black"
-              value={searchQuery} // Qidiruv so'zini qiymatini belgilash
-              onChange={(e) => setSearchQuery(e.target.value)} // Qidiruv so'zini yangilash
+              value={searchQuery} 
+              onChange={(e) => setSearchQuery(e.target.value)} 
             />
           </div>
 

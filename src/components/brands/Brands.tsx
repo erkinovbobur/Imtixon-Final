@@ -12,11 +12,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Brands = () => {
   const settings = {
-    dots: true, // Nisbiy nuqtalar
-    infinite: true, // Cheksiz aylantirish
-    speed: 500, // O'tish tezligi
-    slidesToShow: 3, // Ko'rsatiladigan slaydlar soni
-    slidesToScroll: 1, // Bir marta o'tadigan slaydlar soni
+    dots: true, 
+    infinite: true, 
+    speed: 500, 
+    slidesToShow: 3, 
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,

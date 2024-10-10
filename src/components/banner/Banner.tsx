@@ -45,9 +45,9 @@ const Banner = () => {
           <p className="text-lg sm:text-xl md:text-2xl mb-6 animate-fade-in-up delay-200">
             Explore our wide range of beauty products.
           </p>
-          {/* <button className="bg-pink-600 hover:bg-pink-700 text-white py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 animate-fade-in-up delay-400">
+          <button className="bg-pink-600 hover:bg-pink-700 text-white py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 animate-fade-in-up delay-400">
             Shop Now
-          </button> */}
+          </button>
         </div>
       </div>
     </>

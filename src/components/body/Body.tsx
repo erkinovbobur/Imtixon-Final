@@ -5,7 +5,7 @@ const Body = () => {
           <img
             src="https://images.ctfassets.net/eoaaqxyywn6o/7hNkaoJiA32SZR3jEc8lc/2333d7cdbd2c495e3f42b84549365fb9/TT_LIPSTORY.gif"
             alt="Lip Product"
-            className="w-full h-48 object-contain rounded-t-lg" // h-48 - balandlikni kattalashtirdik
+            className="w-full h-48 object-contain rounded-t-lg" 
           />
           <h1 className="text-xl font-bold mt-2">The viral lip you've been waiting for</h1>
           <p className="text-gray-600 mt-1">Say hello to the all-day staying power of a lip stain with Wonderskin.</p>
@@ -18,7 +18,7 @@ const Body = () => {
           <img
             src="https://images.ctfassets.net/eoaaqxyywn6o/4beh2XCXNyiu5GIMWQ0p6y/8e1b1c779564cc5d2feafb78fc351bb7/Trading_Trio_ROW-NO_DR_JART.jpg"
             alt="Body Care Product"
-            className="w-full h-48 object-contain rounded-t-lg" // h-48 - balandlikni kattalashtirdik
+            className="w-full h-48 object-contain rounded-t-lg" 
           />
           <h1 className="text-xl font-bold mt-2">Head to toe glow</h1>
           <p className="text-gray-600 mt-1">
